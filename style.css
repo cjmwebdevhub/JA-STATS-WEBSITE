@@ -1,6 +1,8 @@
 body {
   font-family: 'Poppins', sans-serif;
   background-color: #f4f6f9;
+  margin: 0;
+  padding: 0;
 }
 
 /* GLASS NAVBAR */
@@ -20,7 +22,6 @@ body {
   border-bottom: 2px solid #0d6efd;
 }
 
-
 /* HERO SECTION */
 .hero {
   height: 100vh;
@@ -31,16 +32,58 @@ body {
   background-position: center;
   display: flex;
   align-items: center;
+  justify-content: center; /* center text horizontally */
+  text-align: center;
   color: #fff;
+  padding: 0 1rem; /* small horizontal padding for mobile */
 }
 
 .hero h1 {
   font-size: 3rem;
   font-weight: 600;
+  line-height: 1.2;
 }
 
 /* CARDS */
 .card {
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  margin-bottom: 2rem;
+}
+
+/* RESPONSIVE ADJUSTMENTS */
+@media (max-width: 992px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+  .glass-nav {
+    padding: 0.5rem 1rem;
+  }
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+  .nav-link {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    height: 60vh;
+    padding: 0 0.5rem;
+  }
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+  .card {
+    margin: 1rem 0;
+    border-radius: 12px;
+    padding: 1rem;
+  }
 }
