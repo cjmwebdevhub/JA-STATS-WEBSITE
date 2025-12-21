@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- IMPORTANT -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- MUST -->
   <title>JA Stats | Statistical Analysis</title>
 
   <!-- Bootstrap -->
@@ -11,8 +11,99 @@
   <!-- Poppins Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
+  <!-- Bootstrap Icons for optional icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* BODY */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f4f6f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* GLASS NAVBAR */
+    .glass-nav {
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    }
+    .navbar-brand, .nav-link {
+      color: #000 !important;
+      font-weight: 500;
+    }
+    .nav-link.active {
+      border-bottom: 2px solid #0d6efd;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem 1rem;
+      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+                  url("https://images.unsplash.com/photo-1529070538774-1843cb3265df");
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+    }
+
+    .btn-light {
+      background: rgba(255,255,255,0.85);
+      color: #000;
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-light:hover {
+      background: rgba(255,255,255,1);
+      transform: translateY(-2px);
+    }
+
+    /* ABOUT SECTION */
+    .about-section {
+      padding: 4rem 1rem;
+      text-align: center;
+    }
+
+    /* MEDIA QUERIES */
+    @media (max-width: 992px) {
+      .hero h1 { font-size: 2.5rem; }
+    }
+    @media (max-width: 768px) {
+      .hero { min-height: 60vh; padding: 2rem; }
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1rem; }
+    }
+    @media (max-width: 576px) {
+      .hero { min-height: 50vh; padding: 1.5rem; }
+      .hero h1 { font-size: 1.5rem; }
+      .hero p { font-size: 0.95rem; }
+      .btn-light { font-size: 0.95rem; padding: 0.6rem 1rem; }
+    }
+  </style>
 </head>
 <body>
 
@@ -20,14 +111,12 @@
 <nav class="navbar navbar-expand-lg fixed-top glass-nav">
   <div class="container">
     <a class="navbar-brand fw-semibold" href="index.html">JA Stats</a>
-
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navMenu">
       <ul class="navbar-nav ms-auto gap-3">
-        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="pages/universities.html">Universities</a></li>
         <li class="nav-item"><a class="nav-link" href="pages/pricing.html">Pricing</a></li>
         <li class="nav-item"><a class="nav-link" href="pages/people.html">People</a></li>
@@ -39,22 +128,22 @@
 
 <!-- HERO SECTION -->
 <section class="hero">
-  <div class="container text-center">
+  <div class="container">
     <h1>Statistical Analysis for Thesis Papers</h1>
     <p class="mt-2">
       Professional, accurate, and research-driven statistical services
       for undergraduate and graduate research.
     </p>
     <a href="pages/contact.html" class="btn btn-light mt-3 px-4">
-      Reach Out
+      <i class="bi bi-envelope-fill"></i> Reach Out
     </a>
   </div>
 </section>
 
 <!-- ABOUT SECTION -->
-<section class="container my-5 pt-4">
-  <h2 class="text-center mb-4">What We Do</h2>
-  <p class="text-center">
+<section class="about-section container">
+  <h2>What We Do</h2>
+  <p class="mt-2">
     We provide expert statistical analysis, data interpretation,
     and results discussion for thesis and research papers,
     aligned with university standards and ethical research practices.
@@ -62,6 +151,5 @@
 </section>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="script.js"></script>
 </body>
 </html>
