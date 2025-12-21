@@ -1,11 +1,17 @@
+/* ---------------------- BASE ---------------------- */
 body {
   font-family: 'Poppins', sans-serif;
   background-color: #f4f6f9;
   margin: 0;
   padding: 0;
+  color: #000;
 }
 
-/* GLASS NAVBAR */
+a {
+  text-decoration: none;
+}
+
+/* ---------------------- GLASS NAVBAR ---------------------- */
 .glass-nav {
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(12px);
@@ -22,7 +28,7 @@ body {
   border-bottom: 2px solid #0d6efd;
 }
 
-/* HERO SECTION */
+/* ---------------------- HERO SECTION ---------------------- */
 .hero {
   height: 100vh;
   background:
@@ -32,38 +38,79 @@ body {
   background-position: center;
   display: flex;
   align-items: center;
-  justify-content: center; /* center text horizontally */
+  justify-content: center;
   text-align: center;
   color: #fff;
-  padding: 0 1rem; /* small horizontal padding for mobile */
+  padding: 0 1rem;
 }
 
 .hero h1 {
   font-size: 3rem;
   font-weight: 600;
   line-height: 1.2;
+  margin: 0;
 }
 
-/* CARDS */
+/* ---------------------- CARDS ---------------------- */
 .card {
   border-radius: 16px;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
   margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: #fff;
+  color: #000;
 }
 
-/* RESPONSIVE ADJUSTMENTS */
+/* ---------------------- BUTTONS ---------------------- */
+.btn {
+  border-radius: 12px;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-light {
+  background: rgba(255, 255, 255, 0.85);
+  color: #000;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-light:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+}
+
+/* ---------------------- GLASS CARDS ---------------------- */
+.glass-card {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+/* ---------------------- MEDIA QUERIES ---------------------- */
+
+/* Small Desktop */
 @media (max-width: 992px) {
   .hero h1 {
     font-size: 2.5rem;
   }
 }
 
+/* Tablet */
 @media (max-width: 768px) {
+  .hero {
+    height: 70vh;
+    padding: 0 1rem;
+  }
   .hero h1 {
     font-size: 2rem;
-  }
-  .glass-nav {
-    padding: 0.5rem 1rem;
   }
   .navbar-brand {
     font-size: 1.2rem;
@@ -71,8 +118,15 @@ body {
   .nav-link {
     font-size: 0.9rem;
   }
+  .card {
+    padding: 1rem;
+  }
+  .glass-card {
+    padding: 2rem;
+  }
 }
 
+/* Mobile */
 @media (max-width: 576px) {
   .hero {
     height: 60vh;
@@ -84,6 +138,13 @@ body {
   .card {
     margin: 1rem 0;
     border-radius: 12px;
-    padding: 1rem;
+    padding: 0.8rem;
+  }
+  .glass-card {
+    padding: 1.5rem;
+  }
+  .btn-light {
+    font-size: 1rem;
+    padding: 0.65rem 1rem;
   }
 }
